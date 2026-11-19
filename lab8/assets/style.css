@@ -1,0 +1,96 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, Arial, sans-serif;
+    background: #f7f3ec;
+    color: #2b2620;
+    line-height: 1.5;
+}
+
+a { color: #1f6f8b; }
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding: 14px 24px;
+    background: #8a5a2b;
+}
+.top a { color: #fff; text-decoration: none; }
+.logo { font-weight: 700; font-size: 1.15rem; }
+.top nav { display: flex; gap: 18px; }
+.top nav a { opacity: .85; padding-bottom: 2px; }
+.top nav a.active { opacity: 1; border-bottom: 2px solid #fff; }
+
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 40px; }
+h1 { color: #8a5a2b; margin: 0 0 18px; font-size: 1.7rem; }
+
+.card {
+    background: #fff;
+    border: 1px solid #e6dccd;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+}
+
+.form label { display: block; margin-bottom: 14px; font-weight: 600; }
+.form input, .form select, .form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 9px 11px;
+    font: inherit;
+    font-weight: 400;
+    border: 1px solid #cdbfa9;
+    border-radius: 8px;
+    background: #fffdf9;
+}
+.form input:focus, .form select:focus, .form textarea:focus {
+    outline: 3px solid rgba(138, 90, 43, .25);
+    border-color: #8a5a2b;
+}
+.row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0 14px; }
+
+button {
+    padding: 10px 22px;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: #8a5a2b;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover { background: #6e4720; }
+
+.error { color: #b3261e; margin: -8px 0 12px; font-size: .92rem; }
+.alert { padding: 10px 14px; border-radius: 8px; }
+.alert-error { background: #fbe9e7; color: #8c1d18; }
+.alert-ok { background: #e6f4ea; color: #1e5631; }
+
+.sort a { margin-right: 10px; text-decoration: none; }
+.sort a.active { font-weight: 700; }
+
+.book-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.book h2 { margin: 0; font-size: 1.2rem; }
+.stars { color: #d39b25; white-space: nowrap; }
+.meta { color: #776c5f; font-size: .9rem; margin: 4px 0; }
+
+.bottom { text-align: center; color: #776c5f; padding: 18px; font-size: .9rem; }
+
+@media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; }
+    .top { padding: 12px 16px; }
+}
+
+/* Лабораторна №8: дії над записом */
+.book-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
+.actions { display: flex; align-items: center; gap: 14px; }
+.actions form { margin: 0; }
+.btn-link { text-decoration: none; font-weight: 600; margin-left: 12px; }
+.actions .btn-link { margin-left: 0; }
+.btn-danger { padding: 6px 14px; background: #fff; color: #b3261e; border: 1px solid #e3b5b1; font-size: .92rem; }
+.btn-danger:hover { background: #fbe9e7; }

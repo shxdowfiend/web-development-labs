@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бібліотека — Книжкова полиця</title>
+    <link rel="stylesheet" href="../lab2/styles.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body class="min-h-screen bg-paper font-sans text-ink">
+    <header class="bg-leather">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
+            <a href="../lab2/index.html" class="font-serif text-xl font-bold text-white">📚 Книжкова полиця</a>
+            <p class="text-white/85">Лабораторна робота №5 · Сьогодні: <b id="today"></b></p>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-8">
+        <h1 class="font-serif text-3xl font-bold sm:text-4xl">Шкільна бібліотека</h1>
+        <p class="mt-2 max-w-3xl text-ink/80">Модель на класах JavaScript: книги видаються на 21 день, аудіокниги — на 10, журнали — на 7. Кожен день прострочення — штраф 3 грн. Кнопка «+10 днів» перемотує час, щоб перевірити штрафи.</p>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-5">
+            <section class="section-card lg:col-span-3">
+                <div class="flex items-center justify-between">
+                    <h2 class="section-title">Каталог</h2>
+                    <span class="rounded-full bg-paper px-3 py-1 text-sm">Вільно: <b id="free-count"></b></span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead><tr class="border-b-2 border-leather-light/40 text-ink/70"><th class="px-2 py-2">№</th><th class="px-2 py-2">Примірник</th><th class="px-2 py-2">Строк</th><th class="px-2 py-2">Стан</th></tr></thead>
+                        <tbody id="catalog"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="section-card lg:col-span-2">
+                <h2 class="section-title">Видача</h2>
+                <label class="text-sm font-semibold">Читач <select id="reader" class="field"></select></label>
+                <label class="text-sm font-semibold">Примірник <select id="item" class="field"></select></label>
+                <div class="flex flex-wrap gap-2">
+                    <button id="borrow" class="btn-primary" type="button">Видати</button>
+                    <button id="return" class="btn-ghost" type="button">Повернути</button>
+                    <button id="skip" class="btn-ghost" type="button">+10 днів</button>
+                </div>
+                <p id="message" role="status" aria-live="polite" hidden></p>
+                <h3 class="font-semibold">Зараз на руках</h3>
+                <p id="loans-empty" class="text-ink/60">Усі примірники в бібліотеці.</p>
+                <ul id="loans" class="space-y-2 text-sm"></ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-8 bg-ink text-paper">
+        <div class="mx-auto max-w-6xl px-4 py-6 text-sm">Рябий Ростислав, група ІПЗм-41 · <a class="underline" href="https://github.com/shxdowfiend">github.com/shxdowfiend</a></div>
+    </footer>
+</body>
+</html>

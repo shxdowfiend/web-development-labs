@@ -1,0 +1,14 @@
+{
+  "name": "web-development-labs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Лабораторні роботи з дисципліни «Основи веб-розробки» — Рябий Ростислав",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./lab2/styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./lab2/styles.css --watch",
+    "start": "php -S 127.0.0.1:8088 -t ."
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

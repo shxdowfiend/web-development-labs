@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжкова полиця — макет на Tailwind CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-paper font-sans text-ink">
+
+    <header class="bg-leather">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between 3xl:max-w-[1560px]">
+            <a href="#top" class="font-serif text-xl font-bold text-white">📚 Книжкова полиця</a>
+            <nav class="flex flex-wrap gap-1 text-sm xs:text-base" aria-label="Розділи сторінки">
+                <a class="nav-link" href="#catalog">Каталог</a>
+                <a class="nav-link" href="#reading">Читаю зараз</a>
+                <a class="nav-link" href="#stats">Статистика</a>
+                <a class="nav-link" href="#timer">Час читання</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top" class="mx-auto max-w-7xl px-4 py-8 sm:py-12 3xl:max-w-[1560px]">
+        <div class="mb-8 max-w-3xl sm:mb-12">
+            <p class="text-sm font-semibold uppercase tracking-widest text-sage">Особистий читацький щоденник</p>
+            <h1 class="mt-2 font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Усе про мої книги — на одній сторінці</h1>
+            <p class="mt-4 text-lg text-ink/80">Каталог прочитаного, поточна книга, статистика за рік і калькулятор, який підкаже, скільки часу потрібно на наступну книгу.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+            <section id="catalog" class="section-card">
+                <img src="assets/books.svg" alt="Книжкова полиця з п'ятьма книгами" class="h-30 w-full rounded-lg bg-paper object-contain p-2">
+                <h2 class="section-title">Каталог</h2>
+                <p class="text-ink/80">Книги, які я вже прочитав, з оцінкою та коротким враженням.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex justify-between gap-2 border-b border-paper pb-2"><span>Іван Багряний — «Тигролови»</span><span class="text-leather">★★★★★</span></li>
+                    <li class="flex justify-between gap-2 border-b border-paper pb-2"><span>Сергій Жадан — «Інтернат»</span><span class="text-leather">★★★★★</span></li>
+                    <li class="flex justify-between gap-2"><span>Роберт Мартін — «Чистий код»</span><span class="text-leather">★★★★☆</span></li>
+                </ul>
+                <a href="#catalog" class="btn-primary mt-auto">Увесь каталог</a>
+            </section>
+
+            <section id="reading" class="section-card">
+                <img src="assets/reading.svg" alt="Розгорнута книга з закладкою" class="h-30 w-full rounded-lg bg-paper object-contain p-2">
+                <h2 class="section-title">Читаю зараз</h2>
+                <p class="font-semibold">Мартін Фаулер — «Рефакторинг»</p>
+                <div>
+                    <div class="mb-1 flex justify-between text-sm"><span>Прогрес</span><span>186 з 448 с.</span></div>
+                    <div class="h-3 overflow-hidden rounded-full bg-paper" role="progressbar" aria-valuemin="0" aria-valuemax="448" aria-valuenow="186" aria-label="Прочитано сторінок">
+                        <div class="h-full w-[42%] rounded-full bg-sage"></div>
+                    </div>
+                </div>
+                <p class="text-sm text-ink/80">Зараз — розділ про виділення функцій. Нотатки веду прямо в книзі олівцем.</p>
+                <a href="#reading" class="btn-ghost mt-auto">Мої нотатки</a>
+            </section>
+
+            <section id="stats" class="section-card">
+                <img src="assets/stats.svg" alt="Стовпчикова діаграма прочитаних сторінок за місяцями" class="h-30 w-full rounded-lg bg-paper object-contain p-2">
+                <h2 class="section-title">Статистика</h2>
+                <dl class="grid grid-cols-2 gap-3 text-center">
+                    <div class="rounded-lg bg-paper p-3"><dt class="text-xs text-ink/70">Книг за рік</dt><dd class="text-2xl font-bold text-leather">14</dd></div>
+                    <div class="rounded-lg bg-paper p-3"><dt class="text-xs text-ink/70">Сторінок</dt><dd class="text-2xl font-bold text-leather">4 870</dd></div>
+                    <div class="rounded-lg bg-paper p-3"><dt class="text-xs text-ink/70">Середня оцінка</dt><dd class="text-2xl font-bold text-leather">4,6</dd></div>
+                    <div class="rounded-lg bg-paper p-3"><dt class="text-xs text-ink/70">Улюблений жанр</dt><dd class="text-base font-bold text-leather">Проза</dd></div>
+                </dl>
+                <a href="#stats" class="btn-ghost mt-auto">Детальніше</a>
+            </section>
+
+            <section id="timer" class="section-card">
+                <img src="assets/clock.svg" alt="Годинник поруч зі стосом книг" class="h-30 w-full rounded-lg bg-paper object-contain p-2">
+                <h2 class="section-title">Час читання</h2>
+                <p class="text-ink/80">Скільки часу займе книга при моїй швидкості читання?</p>
+                <form class="space-y-3" onsubmit="return false">
+                    <label class="block text-sm font-semibold">Сторінок у книзі
+                        <input class="field" type="text" inputmode="numeric" placeholder="наприклад, 320">
+                    </label>
+                    <label class="block text-sm font-semibold">Швидкість, сторінок за годину
+                        <input class="field" type="text" inputmode="numeric" placeholder="наприклад, 40">
+                    </label>
+                    <button type="submit" class="btn-primary w-full">Розрахувати</button>
+                </form>
+                <p class="text-xs text-ink/60">Розрахунок буде реалізовано на JavaScript у лабораторній роботі №3.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="mt-8 bg-ink text-paper">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm sm:flex-row sm:items-center sm:justify-between 3xl:max-w-[1560px]">
+            <p>Рябий Ростислав, група ІПЗм-41 · «Основи веб-розробки»</p>
+            <p>Зв’язок: <a class="underline hover:text-leather-light" href="https://github.com/shxdowfiend">github.com/shxdowfiend</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

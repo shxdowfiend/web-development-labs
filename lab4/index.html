@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функції та структури даних — Книжкова полиця</title>
+    <link rel="stylesheet" href="../lab2/styles.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body class="min-h-screen bg-paper font-sans text-ink">
+    <header class="bg-leather">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
+            <a href="../lab2/index.html" class="font-serif text-xl font-bold text-white">📚 Книжкова полиця</a>
+            <p class="text-white/85">Лабораторна робота №4</p>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-8">
+        <h1 class="font-serif text-3xl font-bold sm:text-4xl">Функції, масиви та структури даних</h1>
+        <p class="mt-2 max-w-3xl text-ink/80">Шість завдань на даних мого списку прочитаного та списку друга. Код — у модулях <code>functions.js</code> і <code>app.js</code>, вивід також дублюється в консоль браузера.</p>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <section class="section-card">
+                <h2 class="section-title text-xl">1. IIFE — дані середовища</h2>
+                <p id="task1" class="whitespace-pre-line"></p>
+            </section>
+            <section class="section-card">
+                <h2 class="section-title text-xl">2. reduce та rest-параметр</h2>
+                <p id="task2" class="whitespace-pre-line"></p>
+            </section>
+            <section class="section-card">
+                <h2 class="section-title text-xl">3. Spread та Set</h2>
+                <p id="task3" class="whitespace-pre-line"></p>
+            </section>
+            <section class="section-card">
+                <h2 class="section-title text-xl">4. Map — книги за жанрами</h2>
+                <p id="task4" class="whitespace-pre-line"></p>
+            </section>
+            <section class="section-card">
+                <h2 class="section-title text-xl">5. call, apply, bind</h2>
+                <p id="task5" class="whitespace-pre-line"></p>
+                <p id="task5b" class="text-sm text-ink/70"></p>
+            </section>
+            <section class="section-card">
+                <h2 class="section-title text-xl">6. Замикання — трекер читання</h2>
+                <form id="tracker-form" class="flex flex-col gap-3 sm:flex-row sm:items-end" novalidate>
+                    <label class="flex-1 text-sm font-semibold">Книга
+                        <select name="book" class="field">
+                            <option value="fowler">«Рефакторинг» (448 с.)</option>
+                            <option value="poetry">«Лісова пісня» (160 с.)</option>
+                        </select>
+                    </label>
+                    <label class="text-sm font-semibold sm:w-32">Сторінок
+                        <input name="pages" class="field" type="text" inputmode="numeric" placeholder="50">
+                    </label>
+                    <button class="btn-primary" type="submit">Додати</button>
+                </form>
+                <p id="tracker-error" class="rounded-lg bg-red-50 px-3 py-2 text-red-800" role="alert" hidden></p>
+                <div class="space-y-3">
+                    <div>
+                        <p class="text-sm font-semibold">«Рефакторинг»: <span id="fowler-text"></span></p>
+                        <div class="mt-1 h-3 overflow-hidden rounded-full bg-paper"><div id="fowler-bar" class="h-full rounded-full bg-sage transition-all"></div></div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold">«Лісова пісня»: <span id="poetry-text"></span></p>
+                        <div class="mt-1 h-3 overflow-hidden rounded-full bg-paper"><div id="poetry-bar" class="h-full rounded-full bg-leather-light transition-all"></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-8 bg-ink text-paper">
+        <div class="mx-auto max-w-6xl px-4 py-6 text-sm">Рябий Ростислав, група ІПЗм-41 · <a class="underline" href="https://github.com/shxdowfiend">github.com/shxdowfiend</a></div>
+    </footer>
+</body>
+</html>

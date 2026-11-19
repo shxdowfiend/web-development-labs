@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-labelledby="t">
+  <title id="t">Годинник поруч зі стосом книг</title>
+  <circle cx="90" cy="70" r="52" fill="#fff" stroke="#8a5a2b" stroke-width="6"/>
+  <g stroke="#2b2620" stroke-width="4" stroke-linecap="round">
+    <line x1="90" y1="70" x2="90" y2="36"/><line x1="90" y1="70" x2="114" y2="82"/>
+  </g>
+  <circle cx="90" cy="70" r="5" fill="#c9553f"/>
+  <rect x="160" y="100" width="64" height="14" rx="2" fill="#5f7f63"/>
+  <rect x="166" y="86" width="56" height="14" rx="2" fill="#b98552"/>
+  <rect x="162" y="72" width="60" height="14" rx="2" fill="#2b2620"/>
+  <rect x="150" y="114" width="80" height="6" rx="2" fill="#8a5a2b"/>
+</svg>

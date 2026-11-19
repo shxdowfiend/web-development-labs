@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Повторювані блоки винесено в компоненти, щоб не дублювати довгі списки класів */
+@layer components {
+  .section-card {
+    @apply flex flex-col gap-4 rounded-book border border-leather-light/30 bg-white p-6 shadow-shelf;
+  }
+  .section-title {
+    @apply font-serif text-2xl font-bold text-leather;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-semibold transition-colors
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-leather-light/40;
+  }
+  .btn-primary {
+    @apply btn bg-leather text-white hover:bg-leather-dark;
+  }
+  .btn-ghost {
+    @apply btn border border-leather text-leather hover:bg-leather hover:text-white;
+  }
+  .nav-link {
+    @apply rounded-md px-3 py-1.5 text-white/85 hover:bg-white/15 hover:text-white;
+  }
+  .field {
+    @apply mt-1 block w-full rounded-lg border border-leather-light/50 bg-paper px-3 py-2
+           focus:border-leather focus:outline-none focus:ring-4 focus:ring-leather-light/30;
+  }
+}

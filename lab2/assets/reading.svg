@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" role="img" aria-labelledby="t">
+  <title id="t">Розгорнута книга з закладкою</title>
+  <path d="M120 30 C90 18 50 18 20 28 V118 C50 108 90 108 120 120 Z" fill="#fff" stroke="#8a5a2b" stroke-width="4"/>
+  <path d="M120 30 C150 18 190 18 220 28 V118 C190 108 150 108 120 120 Z" fill="#fff" stroke="#8a5a2b" stroke-width="4"/>
+  <g stroke="#cdbfa9" stroke-width="3" stroke-linecap="round">
+    <line x1="38" y1="46" x2="104" y2="42"/><line x1="38" y1="60" x2="104" y2="56"/>
+    <line x1="38" y1="74" x2="96" y2="70"/><line x1="38" y1="88" x2="104" y2="84"/>
+    <line x1="136" y1="42" x2="202" y2="46"/><line x1="136" y1="56" x2="202" y2="60"/>
+    <line x1="136" y1="70" x2="190" y2="74"/>
+  </g>
+  <path d="M176 22 h16 v40 l-8 -8 l-8 8 z" fill="#c9553f"/>
+</svg>

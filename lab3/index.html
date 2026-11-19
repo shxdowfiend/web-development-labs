@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Час читання — Книжкова полиця</title>
+    <link rel="stylesheet" href="../lab2/styles.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body class="min-h-screen bg-paper font-sans text-ink">
+
+    <header class="bg-leather">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between">
+            <a href="../lab2/index.html" class="font-serif text-xl font-bold text-white">📚 Книжкова полиця</a>
+            <nav class="flex flex-wrap gap-1 text-sm xs:text-base" aria-label="Навігація">
+                <a class="nav-link" href="../lab2/index.html#catalog">Каталог</a>
+                <a class="nav-link" href="../lab2/index.html#reading">Читаю зараз</a>
+                <a class="nav-link" href="../lab2/index.html#stats">Статистика</a>
+                <a class="nav-link bg-white/15 text-white" href="index.html" aria-current="page">Час читання</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-8 sm:py-12">
+        <h1 class="font-serif text-3xl font-bold sm:text-4xl">Калькулятор часу читання</h1>
+        <p class="mt-2 max-w-2xl text-ink/80">Вкажіть кількість сторінок і свою швидкість — калькулятор порахує загальний час, а якщо додати щоденний ліміт, то й кількість днів та орієнтовну дату завершення.</p>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-5">
+            <section class="section-card lg:col-span-3" aria-labelledby="calc-title">
+                <h2 id="calc-title" class="section-title">Розрахунок</h2>
+
+                <form id="reading-form" class="space-y-4" novalidate>
+                    <label class="block font-semibold" for="pages">Сторінок у книзі</label>
+                    <input class="field -mt-3" id="pages" name="pages" type="text" inputmode="numeric" placeholder="наприклад, 448" autocomplete="off">
+
+                    <label class="block font-semibold" for="speed">Швидкість, сторінок за годину</label>
+                    <input class="field -mt-3" id="speed" name="speed" type="text" inputmode="decimal" placeholder="наприклад, 40" autocomplete="off">
+                    <div id="presets" class="flex flex-wrap gap-2" aria-label="Типові швидкості"></div>
+
+                    <label class="block font-semibold" for="daily">Хвилин читання на день <span class="font-normal text-ink/60">(необов’язково)</span></label>
+                    <input class="field -mt-3" id="daily" name="daily" type="text" inputmode="numeric" placeholder="наприклад, 45" autocomplete="off">
+
+                    <p id="form-error" class="rounded-lg bg-red-50 px-3 py-2 text-red-800" role="alert" hidden></p>
+
+                    <button type="submit" class="btn-primary w-full sm:w-auto">Розрахувати</button>
+                </form>
+
+                <div id="result" class="space-y-1 rounded-lg border-l-4 border-sage bg-paper p-4" aria-live="polite" hidden></div>
+            </section>
+
+            <section class="section-card lg:col-span-2" aria-labelledby="history-title">
+                <div class="flex items-center justify-between gap-2">
+                    <h2 id="history-title" class="section-title">Історія</h2>
+                    <span class="rounded-full bg-paper px-3 py-1 text-sm">Записів: <b id="history-count">0</b></span>
+                </div>
+                <p id="history-empty" class="text-ink/60">Тут з’являться ваші розрахунки.</p>
+                <ul id="history-list" class="space-y-2"></ul>
+                <p id="history-status" class="text-sm text-sage" aria-live="polite"></p>
+                <button id="clear-history" type="button" class="btn-ghost mt-auto disabled:cursor-not-allowed disabled:opacity-40">Очистити історію</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-8 bg-ink text-paper">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+            <p>Рябий Ростислав, група ІПЗм-41 · «Основи веб-розробки»</p>
+            <p>Зв’язок: <a class="underline hover:text-leather-light" href="https://github.com/shxdowfiend">github.com/shxdowfiend</a></p>
+        </div>
+    </footer>
+</body>
+</html>
